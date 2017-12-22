@@ -9,6 +9,9 @@
   "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
+    "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+    "--talk-name=ca.desrt.dconf",
+    "--filesystem=xdg-run/dconf",
     "--filesystem=host:ro",
     "--socket=wayland",
     "--socket=x11",
@@ -24,7 +27,7 @@
       "name": "wxwidgets",
       "cleanup": [ "/bin", "/include", "/share", "/lib/wx" ],
       "rm-configure": true,
-      "config-opts": [ "--enable-shared", "--disable-static", "--enable-unicode" ],
+      "config-opts": [ "--enable-shared", "--disable-static", "--enable-unicode", "--with-gtk=3" ],
       "sources": [
         {
           "type": "archive",
