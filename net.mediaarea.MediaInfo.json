@@ -31,8 +31,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.3.1/wxWidgets-3.0.3.1.tar.bz2",
-          "sha256": "3164ad6bc5f61c48d2185b39065ddbe44283eb834a5f62beb13f1d0923e366e4"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2",
+          "sha256": "96157f988d261b7368e5340afa1a0cad943768f35929c22841f62c25b17bf7f0"
         },
         {
           "type": "script",
@@ -64,8 +64,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/18.03/libmediainfo_18.03.tar.xz",
-          "sha256": "fb451233bea6bdf188ef76f237e02e907ef632b85a166e44d60e559d66c49fb4"
+          "url": "https://mediaarea.net/download/source/libmediainfo/18.05/libmediainfo_18.05.tar.xz",
+          "sha256": "76759613ca71d5659818e6ed121be9f31c552931b04939b0db4c58bc57cd5221"
         }
       ]
     },
@@ -76,8 +76,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/18.03/mediainfo_18.03.tar.xz",
-          "sha256": "c1fa4ef50c99081350d0efb00e6c1fb2e196872a321cd2e1f27f516371d83d9c"
+          "url": "https://mediaarea.net/download/source/mediainfo/18.05/mediainfo_18.05.tar.xz",
+          "sha256": "d94093aaf910759f302fb6b5ac23540a217eb940cfbb21834de2381de975fa65"
         }
       ]
     }
