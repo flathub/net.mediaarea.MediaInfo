@@ -64,8 +64,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/18.08/libmediainfo_18.08.tar.xz",
-          "sha256": "4831e0f5e845cfada3a02a9ba960da33d90963ef8fe0a3baecc5271aa79b2e41"
+          "url": "https://mediaarea.net/download/source/libmediainfo/18.08.1/libmediainfo_18.08.1.tar.xz",
+          "sha256": "7a237f35257fadf2796c02161e87330dedca74d0fb914259be3d8d88d2cbcbc0"
         }
       ]
     },
@@ -76,8 +76,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/18.08/mediainfo_18.08.tar.xz",
-          "sha256": "36a554b475b113b0ab87675a23d802f34c7d82dee54b9099516d58c75f868b50"
+          "url": "https://mediaarea.net/download/source/mediainfo/18.08.1/mediainfo_18.08.1.tar.xz",
+          "sha256": "49773d0b13cb13818a7727b59f0124186fd96b3ffd22a6402ccf082c3f6b0267"
         }
       ]
     }
