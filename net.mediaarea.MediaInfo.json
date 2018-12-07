@@ -1,7 +1,7 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.26",
+  "runtime-version": "3.30",
   "branch": "stable",
   "sdk": "org.gnome.Sdk",
   "command": "mediainfo-gui",
@@ -27,12 +27,12 @@
       "name": "wxwidgets",
       "cleanup": [ "/bin", "/include", "/share", "/lib/wx" ],
       "rm-configure": true,
-      "config-opts": [ "--enable-shared", "--disable-static", "--enable-unicode", "--with-gtk=3" ],
+      "config-opts": [ "--enable-shared", "--enable-unicode", "--with-gtk=3" ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2",
-          "sha256": "96157f988d261b7368e5340afa1a0cad943768f35929c22841f62c25b17bf7f0"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.1/wxWidgets-3.1.1.tar.bz2",
+          "sha256": "c925dfe17e8f8b09eb7ea9bfdcfcc13696a3e14e92750effd839f5e10726159e"
         },
         {
           "type": "script",
@@ -52,7 +52,7 @@
         {
           "type": "archive",
           "url": "https://mediaarea.net/download/source/libzen/0.4.37/libzen_0.4.37.tar.xz",
-          "sha256": "38c0a68b715b55d6685d2759eecda040adf37bd066955d79a5d01f91977bd9a0"
+          "sha256": "401c34d93056a95f8392982f856d1371c5de6aec373d84dcbb356e1f473d0452"
         }
       ]
     },
