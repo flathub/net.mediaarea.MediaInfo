@@ -1,9 +1,9 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "3.30",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "18.08",
   "branch": "stable",
-  "sdk": "org.gnome.Sdk",
+  "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
   "rename-appdata-file": "mediainfo-gui.metainfo.xml",
@@ -18,10 +18,6 @@
     "--share=network",
     "--share=ipc"
   ],
-  "build-options": {
-    "cflags": "-O2 -g",
-    "cxxflags": "-O2 -g"
-  },
   "modules": [
     {
       "name": "wxwidgets",
