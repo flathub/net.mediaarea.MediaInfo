@@ -1,7 +1,7 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "18.08",
+  "runtime-version": "19.08",
   "default-branch": "stable",
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
