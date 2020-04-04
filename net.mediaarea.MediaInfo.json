@@ -23,8 +23,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxWidgets-3.1.2.tar.bz2",
-          "sha256": "4cb8d23d70f9261debf7d6cfeca667fc0a7d2b6565adb8f1c484f9b674f1f27a"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.tar.bz2",
+          "sha256": "fffc1d34dac54ff7008df327907984b156c50cff5a2f36ee3da6052744ab554a"
         },
         {
           "type": "script",
@@ -43,8 +43,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libzen/0.4.37/libzen_0.4.37.tar.xz",
-          "sha256": "38c0a68b715b55d6685d2759eecda040adf37bd066955d79a5d01f91977bd9a0"
+          "url": "https://mediaarea.net/download/source/libzen/0.4.38/libzen_0.4.38.tar.xz",
+          "sha256": "b8825b3190b3a31d8d362547cfa26a3c10e8c063df2d87e4a05758d6b756c8ab"
         }
       ]
     },
@@ -56,8 +56,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/19.09/libmediainfo_19.09.tar.xz",
-          "sha256": "ff06e1a449dfbe6f2c51f27ae1187d3e72386cb54476fbb189ffaacf845f478e"
+          "url": "https://mediaarea.net/download/source/libmediainfo/20.03/libmediainfo_20.03.tar.xz",
+          "sha256": "6848310eb7050efe7f90f18191dacfcc220c924390b8088fdf0d553274917f72"
         }
       ]
     },
@@ -68,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/19.09/mediainfo_19.09.tar.xz",
-          "sha256": "02f5b0ae42825776b51500f023ff883fd632dc4cbe229f00d7528bf0e8d45aa8"
+          "url": "https://mediaarea.net/download/source/mediainfo/20.03/mediainfo_20.03.tar.xz",
+          "sha256": "dc3ef8a2aea8d1bb101c679209de941d094141113acda42677c101c7bc853ab8"
         },
         {
           "type": "file",
