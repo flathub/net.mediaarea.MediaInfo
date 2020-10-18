@@ -1,11 +1,12 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "19.08",
+  "runtime-version": "20.08",
   "default-branch": "stable",
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
+  "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
     "--filesystem=host:ro",
@@ -23,8 +24,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.tar.bz2",
-          "sha256": "fffc1d34dac54ff7008df327907984b156c50cff5a2f36ee3da6052744ab554a"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.tar.bz2",
+          "sha256": "3ca3a19a14b407d0cdda507a7930c2e84ae1c8e74f946e0144d2fa7d881f1a94"
         },
         {
           "type": "script",
@@ -56,8 +57,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/20.08/libmediainfo_20.08.tar.xz",
-          "sha256": "12d346b10d6cbb83b81926de5fbfe6dee9e9f877e73cb5dac86609826582c8a6"
+          "url": "https://mediaarea.net/download/source/libmediainfo/20.09/libmediainfo_20.09.tar.xz",
+          "sha256": "d07ce857330a9f9eedc4e5748f8022af1e9540e88a732d4e45c818c8ec4dd196"
         }
       ]
     },
@@ -68,16 +69,9 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/20.08/mediainfo_20.08.tar.xz",
-          "sha256": "3484dda3ab36326cc6853f812ac8f47a0011b2582152ac35e9e10d5d64134ead"
-        },
-        {
-          "type": "file",
-          "path": "net.mediaarea.MediaInfo.appdata.xml"
+          "url": "https://mediaarea.net/download/source/mediainfo/20.09/mediainfo_20.09.tar.xz",
+          "sha256": "39327ef83caa38a96114d1b90654012b9ef727538fe82c37dd67aea2cf4f0f67"
         }
-      ],
-      "post-install": [
-        "install -D -m 0644 ../../../net.mediaarea.MediaInfo.appdata.xml /app/share/appdata/net.mediaarea.MediaInfo.appdata.xml"
       ]
     }
   ]
