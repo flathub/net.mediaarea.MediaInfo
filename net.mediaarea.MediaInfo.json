@@ -1,7 +1,7 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "20.08",
+  "runtime-version": "21.08",
   "default-branch": "stable",
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
@@ -24,8 +24,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.tar.bz2",
-          "sha256": "3ca3a19a14b407d0cdda507a7930c2e84ae1c8e74f946e0144d2fa7d881f1a94"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.tar.bz2",
+          "sha256": "d7b3666de33aa5c10ea41bb9405c40326e1aeb74ee725bb88f90f1d50270a224"
         },
         {
           "type": "script",
@@ -57,8 +57,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/21.03/libmediainfo_21.03.tar.xz",
-          "sha256": "56b7e9abf80cba48032165cd7a46fd8d43dd63e3af35765f66c3f134caaca4ca"
+          "url": "https://mediaarea.net/download/source/libmediainfo/21.09/libmediainfo_21.09.tar.xz",
+          "sha256": "69be9444f6a03a1bdf56713ee31d56e987c502a7ec18eb54ee70fcc171b7f126"
         }
       ]
     },
@@ -69,8 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/21.03/mediainfo_21.03.tar.xz",
-          "sha256": "de50ca0b2c607b8999d3c9e542d27c97030a59f31859b612335315be6850021e"
+          "url": "https://mediaarea.net/download/source/mediainfo/21.09/mediainfo_21.09.tar.xz",
+          "sha256": "7b8fd9a502ec64afe1315072881b6385ba57ca69f2f82c625b1672e151c50c57"
         }
       ]
     }
