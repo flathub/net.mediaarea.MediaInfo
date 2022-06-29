@@ -6,7 +6,6 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
-  "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
     "--filesystem=host:ro",
@@ -24,8 +23,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.6/wxWidgets-3.1.6.tar.bz2",
-          "sha256": "4980e86c6494adcd527a41fc0a4e436777ba41d1893717d7b7176c59c2061c25"
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.7/wxWidgets-3.1.7.tar.bz2",
+          "sha256": "3d666e47d86192f085c84089b850c90db7a73a5d26b684b617298d89dce84f19"
         },
         {
           "type": "script",
@@ -57,8 +56,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/22.03/libmediainfo_22.03.tar.xz",
-          "sha256": "fc50babb628e9cfba655288dae06d5c342b0d7e6941a32d64fbbb113248c80b9"
+          "url": "https://mediaarea.net/download/source/libmediainfo/22.06/libmediainfo_22.06.tar.xz",
+          "sha256": "b279a84f2f3bb353664c4e7d5feedbac98b1fd0d4d4131ab73317541f7fec2f6"
         }
       ]
     },
@@ -69,9 +68,16 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/22.03/mediainfo_22.03.tar.xz",
-          "sha256": "6236f92a1d57a8174b3f30ea6dde8aab538d8f620f728224d851373169802be4"
+          "url": "https://mediaarea.net/download/source/mediainfo/22.06/mediainfo_22.06.tar.xz",
+          "sha256": "986a300bcc273498a3e5da4e9701d7de6eee199ed36d42273dd3fe9ec7ac8b7d"
+        },
+        {
+          "type": "file",
+          "path": "net.mediaarea.MediaInfo.appdata.xml"
         }
+      ],
+      "post-install": [
+        "install -D -m 0644 ../../../net.mediaarea.MediaInfo.appdata.xml /app/share/appdata/net.mediaarea.MediaInfo.appdata.xml"
       ]
     }
   ]
