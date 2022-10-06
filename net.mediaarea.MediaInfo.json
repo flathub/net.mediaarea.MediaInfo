@@ -6,6 +6,7 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
+  "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
     "--filesystem=host:ro",
@@ -56,8 +57,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/22.06/libmediainfo_22.06.tar.xz",
-          "sha256": "b279a84f2f3bb353664c4e7d5feedbac98b1fd0d4d4131ab73317541f7fec2f6"
+          "url": "https://mediaarea.net/download/source/libmediainfo/22.09/libmediainfo_22.09.tar.xz",
+          "sha256": "b394d48285730cda53a41f41c82fd5ebf074c7158e1d6d4543777bfde0aa6927"
         }
       ]
     },
@@ -68,16 +69,9 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/22.06/mediainfo_22.06.tar.xz",
-          "sha256": "986a300bcc273498a3e5da4e9701d7de6eee199ed36d42273dd3fe9ec7ac8b7d"
-        },
-        {
-          "type": "file",
-          "path": "net.mediaarea.MediaInfo.appdata.xml"
+          "url": "https://mediaarea.net/download/source/mediainfo/22.09/mediainfo_22.09.tar.xz",
+          "sha256": "67f301276a2b82d76cb9f4bd525caa51d2dc6d4359fce774fbd5f25f1d513044"
         }
-      ],
-      "post-install": [
-        "install -D -m 0644 ../../../net.mediaarea.MediaInfo.appdata.xml /app/share/appdata/net.mediaarea.MediaInfo.appdata.xml"
       ]
     }
   ]
