@@ -64,6 +64,17 @@
       ]
     },
     {
+      "name": "mediainfo",
+      "subdir": "Project/GNU/CLI",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://mediaarea.net/download/source/mediainfo/23.10/mediainfo_23.10.tar.xz",
+          "sha256": "b743ae2521d9d8e8b9a5850d7c2a29de30ba777db52738d0dfba17cc046776e7"
+        }
+      ]
+    },
+    {
       "name": "mediainfo-gui",
       "subdir": "Project/GNU/GUI",
       "cleanup": [ "share/pixmaps", "/share/apps", "/share/kde4", "/share/kservices5" ],
