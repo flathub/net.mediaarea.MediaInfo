@@ -1,12 +1,11 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "22.08",
+  "runtime-version": "23.08",
   "default-branch": "stable",
   "sdk": "org.freedesktop.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
-  "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
     "--filesystem=host:ro",
@@ -58,8 +57,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/23.11/libmediainfo_23.11.tar.xz",
-          "sha256": "197e54fcc79e3c0d5df44a8f58dc4e018bc2f85d13fa3bed54af3dc56d5e853d"
+          "url": "https://mediaarea.net/download/source/libmediainfo/24.03/libmediainfo_24.03.tar.xz",
+          "sha256": "cc2bb44e407c890ab566934c56763918505ab58c14134b53f0d1da9eea242c8d"
         }
       ]
     },
@@ -69,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/23.11/mediainfo_23.11.tar.xz",
-          "sha256": "801cb1b0d1bffcc1226deca6212a1ee35322e8bb12630a33bbb07a92a8a8c9c3"
+          "url": "https://mediaarea.net/download/source/mediainfo/24.03/mediainfo_24.03.tar.xz",
+          "sha256": "6ff8f1fa2f859a13091f75a2cf913486644f6e259ad1c25afb9a93e48444c563"
         }
       ]
     },
@@ -81,9 +80,16 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/23.11/mediainfo_23.11.tar.xz",
-          "sha256": "801cb1b0d1bffcc1226deca6212a1ee35322e8bb12630a33bbb07a92a8a8c9c3"
+          "url": "https://mediaarea.net/download/source/mediainfo/24.03/mediainfo_24.03.tar.xz",
+          "sha256": "6ff8f1fa2f859a13091f75a2cf913486644f6e259ad1c25afb9a93e48444c563"
+        },
+        {
+            "type": "file",
+            "path": "net.mediaarea.MediaInfo.metainfo.xml"
         }
+      ],
+      "post-install": [
+        "install -D -m 0644 ../../../net.mediaarea.MediaInfo.metainfo.xml /app/share/metainfo/net.mediaarea.MediaInfo.metainfo.xml"
       ]
     }
   ]
