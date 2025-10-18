@@ -21,7 +21,7 @@
       "name": "wxwidgets",
       "cleanup": [ "/bin", "/include", "/share", "/lib/wx" ],
       "rm-configure": true,
-      "config-opts": [ "--enable-shared", "--with-gtk=3" ],
+      "config-opts": [ "--enable-shared", "--with-gtk=3", "--enable-html", "--enable-webview", "--enable-webviewwebkit" ],
       "sources": [
         {
           "type": "archive",
@@ -83,6 +83,10 @@
           "type": "archive",
           "url": "https://mediaarea.net/download/source/mediainfo/25.09/mediainfo_25.09.tar.xz",
           "sha256": "8d4ba0d8bd7d4097fd0a388d4131de40c35ac5dbe52a4760b79d8f1d29ef2e63"
+        },
+        {
+            "type": "patch",
+            "path": "fix_for_wx3.3.x.patch"
         }
       ]
     }
