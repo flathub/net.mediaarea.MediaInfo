@@ -1,0 +1,18 @@
+﻿diff --git a/Source/GUI/WxWidgets/GUI_Main_HTML.cpp b/Source/GUI/WxWidgets/GUI_Main_HTML.cpp
+index 3733fd5e9..19e8cc9e0 100644
+--- a/Source/GUI/WxWidgets/GUI_Main_HTML.cpp
++++ b/Source/GUI/WxWidgets/GUI_Main_HTML.cpp
+@@ -48,11 +48,8 @@ void GUI_Main_HTML::GUI_Refresh()
+ //---------------------------------------------------------------------------
+ void GUI_Main_HTML::GUI_Refresh()
+ {
+-    std::string Temp(wxConvUTF8.cWX2MB(C->Inform_Get().c_str()));
+-    wxFileSystem::AddHandler(new wxMemoryFSHandler);
+-    wxMemoryFSHandler::AddFile(__T("index.html"), Temp.c_str(), Temp.size());
+-    LoadPage(__T("memory:index.html"));
+-    wxMemoryFSHandler::RemoveFile(__T("index.html"));
++    wxString Temp=C->Inform_Get();
++    SetPage(Temp);
+ }
+ 
+ void GUI_Main_HTML::GUI_Resize()
