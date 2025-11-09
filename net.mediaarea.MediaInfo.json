@@ -58,8 +58,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/25.09/libmediainfo_25.09.tar.xz",
-          "sha256": "8562e8ea03e2af8bde27f66d79a0f573859b8f13193ec115abf10f735b313a12"
+          "url": "https://mediaarea.net/download/source/libmediainfo/25.10/libmediainfo_25.10.tar.xz",
+          "sha256": "ad13d9797b046ce39d0c65a6f81d2aef2429734c21865a6a4c592c7c01f249dd"
         }
       ]
     },
@@ -69,8 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/25.09/mediainfo_25.09.tar.xz",
-          "sha256": "8d4ba0d8bd7d4097fd0a388d4131de40c35ac5dbe52a4760b79d8f1d29ef2e63"
+          "url": "https://mediaarea.net/download/source/mediainfo/25.10/mediainfo_25.10.tar.xz",
+          "sha256": "366b325101ab1a9a4ee79fbdb8e3dd9e78bcc0a21c0f9b1966313aaed3d33502"
         }
       ]
     },
@@ -81,12 +81,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/25.09/mediainfo_25.09.tar.xz",
-          "sha256": "8d4ba0d8bd7d4097fd0a388d4131de40c35ac5dbe52a4760b79d8f1d29ef2e63"
-        },
-        {
-            "type": "patch",
-            "path": "fix_for_wx3.3.x.patch"
+          "url": "https://mediaarea.net/download/source/mediainfo/25.10/mediainfo_25.10.tar.xz",
+          "sha256": "366b325101ab1a9a4ee79fbdb8e3dd9e78bcc0a21c0f9b1966313aaed3d33502"
         }
       ]
     }
