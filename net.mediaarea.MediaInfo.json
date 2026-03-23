@@ -9,11 +9,8 @@
   "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
-    "--filesystem=host:ro",
-    "--filesystem=home:rw",
     "--socket=wayland",
-    "--socket=x11",
-    "--share=network",
+    "--socket=fallback-x11",
     "--share=ipc"
   ],
   "cleanup": [
