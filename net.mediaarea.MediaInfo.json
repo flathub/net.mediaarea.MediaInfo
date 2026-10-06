@@ -1,55 +1,82 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "25.08",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "6.11",
+  "base": "io.qt.qtwebengine.BaseApp",
+  "base-version": "6.11",
   "default-branch": "stable",
-  "sdk": "org.freedesktop.Sdk",
+  "sdk": "org.kde.Sdk",
   "command": "mediainfo-gui",
   "rename-desktop-file": "mediainfo-gui.desktop",
   "rename-appdata-file": "mediainfo-gui.metainfo.xml",
   "rename-icon": "mediainfo",
   "finish-args": [
     "--filesystem=host:ro",
-    "--filesystem=home:rw",
     "--socket=wayland",
-    "--socket=x11",
+    "--socket=fallback-x11",
     "--share=network",
-    "--share=ipc"
+    "--share=ipc",
+    "--env=GVBINDIR=/app/lib/graphviz",
+    "--env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess",
+    "--env=QTWEBENGINE_DISABLE_SANDBOX=1"
   ],
+  "cleanup-commands": [ "/app/cleanup-BaseApp.sh" ],
   "cleanup": [
     "/include",
     "/lib/pkgconfig",
     "*.la",
     "*.a"
   ],
+  "build-options": {
+    "env": {
+      "GVBINDIR": "/app/lib/graphviz",
+      "QMAKEPATH": "/app",
+      "QMAKEFEATURES": "/app/mkspecs/features",
+      "PKG_CONFIG_PATH": "/app/lib/pkgconfig",
+      "CPLUS_INCLUDE_PATH": "/app/include"
+    }
+  },
   "modules": [
     {
-      "name": "wxwidgets",
+      "name": "graphviz",
       "cleanup": [
-        "/bin",
-        "/share",
-        "/lib/wx"
+        "/share/man",
+        "/share/graphviz/doc",
+        "/lib/cmake"
       ],
-      "rm-configure": true,
+      "buildsystem": "autotools",
       "config-opts": [
+        "--disable-static",
         "--enable-shared",
-        "--with-gtk=3",
-        "--enable-html",
-        "--enable-webview",
-        "--enable-webviewwebkit"
+        "--with-cairo",
+        "--disable-swig",
+        "--disable-python",
+        "--disable-perl",
+        "--disable-ruby",
+        "--disable-tcl",
+        "--without-x",
+        "--without-gdk-pixbuf"
+      ],
+      "post-install": [ "dot -c" ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.com/graphviz/graphviz/-/archive/12.2.1/graphviz-12.2.1.tar.gz",
+          "sha256": "91d444b4dabdaf5bfa7c6fcc3a1ee5d41e588af6079ebc030f0acb79e48a56ea"
+        }
+      ]
+    },
+    {
+      "name": "libmms",
+      "config-opts": [
+        "--disable-static",
+        "--enable-shared"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2",
-          "sha256": "f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d"
-        },
-        {
-          "type": "script",
-          "commands": [
-            "cp -p /usr/share/automake-*/config.{sub,guess} .",
-            "autoconf -f -B build/autoconf_prepend-include"
-          ]
+          "url": "https://downloads.sourceforge.net/project/libmms/libmms/0.6.4/libmms-0.6.4.tar.gz",
+          "sha256": "3c05e05aebcbfcc044d9e8c2d4646cd8359be39a3f0ba8ce4e72a9094bee704f"
         }
       ]
     },
@@ -74,13 +101,15 @@
       "config-opts": [
         "--enable-shared",
         "--disable-static",
-        "--with-libcurl"
+        "--with-libcurl",
+        "--with-graphviz=runtime",
+        "--with-libmms"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/26.05/libmediainfo_26.05.tar.xz",
-          "sha256": "c08b2d87b2fb5edb4526c2a8a317eb1f2cff44807e4631a037ca9f9a1d455054"
+          "url": "https://mediaarea.net/download/source/libmediainfo/26.10/libmediainfo_26.10.tar.xz",
+          "sha256": "a806fd36592549a03e810486f415a6858d4d8f14066bfbe97b32a447cd5eb590"
         }
       ]
     },
@@ -90,14 +119,22 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/26.05/mediainfo_26.05.tar.xz",
-          "sha256": "f852093f9050022d699606eeabb38b24da5523d0212fab64dc4e4d3e46b56de1"
+          "url": "https://mediaarea.net/download/source/mediainfo/26.10/mediainfo_26.10.tar.xz",
+          "sha256": "82f6bce8e58818509022f0bbcc87fce0c6da21822fb2a2a9573b5e3950d8e5f6"
         }
       ]
     },
     {
       "name": "mediainfo-gui",
-      "subdir": "Project/GNU/GUI",
+      "subdir": "Project/QMake/GUI",
+      "buildsystem": "qmake",
+      "config-opts": [ "MediaInfoQt.pro", "-after", "target.path=/app/bin" ],
+      "post-install": [
+        "install -D -m 0644 ../../GNU/GUI/mediainfo-gui.desktop /app/share/applications/mediainfo-gui.desktop",
+        "install -D -m 0644 ../../GNU/GUI/mediainfo-gui.metainfo.xml /app/share/metainfo/mediainfo-gui.metainfo.xml",
+        "install -D -m 0644 ../../../Source/Resource/Image/MediaInfo.png /app/share/icons/hicolor/256x256/apps/mediainfo.png",
+        "install -D -m 0644 ../../../Source/Resource/Image/MediaInfo.svg /app/share/icons/hicolor/scalable/apps/mediainfo.svg"
+      ],
       "cleanup": [
         "/share/pixmaps",
         "/share/apps",
@@ -107,8 +144,12 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/26.05/mediainfo_26.05.tar.xz",
-          "sha256": "f852093f9050022d699606eeabb38b24da5523d0212fab64dc4e4d3e46b56de1"
+          "url": "https://mediaarea.net/download/source/mediainfo/26.10/mediainfo_26.10.tar.xz",
+          "sha256": "82f6bce8e58818509022f0bbcc87fce0c6da21822fb2a2a9573b5e3950d8e5f6"
+        },
+        {
+          "type": "patch",
+          "path": "qt-gui-color-scheme-palette.patch"
         }
       ]
     }
