@@ -1,9 +1,9 @@
 {
   "app-id": "net.mediaarea.MediaInfo",
   "runtime": "org.kde.Platform",
-  "runtime-version": "6.10",
+  "runtime-version": "6.11",
   "base": "io.qt.qtwebengine.BaseApp",
-  "base-version": "6.10",
+  "base-version": "6.11",
   "default-branch": "stable",
   "sdk": "org.kde.Sdk",
   "command": "mediainfo-gui",
@@ -16,8 +16,7 @@
     "--socket=fallback-x11",
     "--share=network",
     "--share=ipc",
-    "--env=GV_PLUGIN_PATH=/app/lib/graphviz",
-    "--env=GVBINDIR=/app/bin",
+    "--env=GVBINDIR=/app/lib/graphviz",
     "--env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess",
     "--env=QTWEBENGINE_DISABLE_SANDBOX=1"
   ],
@@ -30,15 +29,11 @@
   ],
   "build-options": {
     "env": {
-      "GV_PLUGIN_PATH": "/app/lib/graphviz",
-      "GVBINDIR": "/app/bin",
+      "GVBINDIR": "/app/lib/graphviz",
       "QMAKEPATH": "/app",
       "QMAKEFEATURES": "/app/mkspecs/features",
-      "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig",
-      "CPLUS_INCLUDE_PATH": "/app/include",
-      "LIBRARY_PATH": "/app/lib",
-      "LD_LIBRARY_PATH": "/app/lib",
-      "QTWEBENGINE_DISABLE_SANDBOX": "1"
+      "PKG_CONFIG_PATH": "/app/lib/pkgconfig",
+      "CPLUS_INCLUDE_PATH": "/app/include"
     }
   },
   "modules": [
@@ -113,8 +108,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/libmediainfo/26.05/libmediainfo_26.05.tar.xz",
-          "sha256": "c08b2d87b2fb5edb4526c2a8a317eb1f2cff44807e4631a037ca9f9a1d455054"
+          "url": "https://mediaarea.net/download/source/libmediainfo/26.10/libmediainfo_26.10.tar.xz",
+          "sha256": "a806fd36592549a03e810486f415a6858d4d8f14066bfbe97b32a447cd5eb590"
         }
       ]
     },
@@ -124,8 +119,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/26.05/mediainfo_26.05.tar.xz",
-          "sha256": "f852093f9050022d699606eeabb38b24da5523d0212fab64dc4e4d3e46b56de1"
+          "url": "https://mediaarea.net/download/source/mediainfo/26.10/mediainfo_26.10.tar.xz",
+          "sha256": "82f6bce8e58818509022f0bbcc87fce0c6da21822fb2a2a9573b5e3950d8e5f6"
         }
       ]
     },
@@ -149,8 +144,12 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://mediaarea.net/download/source/mediainfo/26.05/mediainfo_26.05.tar.xz",
-          "sha256": "f852093f9050022d699606eeabb38b24da5523d0212fab64dc4e4d3e46b56de1"
+          "url": "https://mediaarea.net/download/source/mediainfo/26.10/mediainfo_26.10.tar.xz",
+          "sha256": "82f6bce8e58818509022f0bbcc87fce0c6da21822fb2a2a9573b5e3950d8e5f6"
+        },
+        {
+          "type": "patch",
+          "path": "qt-gui-color-scheme-palette.patch"
         }
       ]
     }

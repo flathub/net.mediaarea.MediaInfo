@@ -1,0 +1,34 @@
+--- a/Source/GUI/Qt/mainwindow.cpp
++++ b/Source/GUI/Qt/mainwindow.cpp
+@@ -36,6 +36,8 @@
+ #include <QPushButton>
+ #include <QDesktopServices>
+ #include <QStyleHints>
++#include <QStyle>
++#include <QPalette>
+ /*
+ #include <qwt/qwt_plot.h>
+ #include <qwt/qwt_plot_curve.h>
+@@ -1010,7 +1012,21 @@
+     ui->toolBar->setIconSize(settings->value("iconSize",QSize(32,32)).toSize());
+ 
+ #if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+-    qApp->styleHints()->setColorScheme(static_cast<Qt::ColorScheme>(settings->value("colorTheme",static_cast<int>(Qt::ColorScheme::Unknown)).toInt()));
++    const Qt::ColorScheme ColorTheme=static_cast<Qt::ColorScheme>(settings->value("colorTheme",static_cast<int>(Qt::ColorScheme::Unknown)).toInt());
++    qApp->styleHints()->setColorScheme(ColorTheme);
++#ifdef Q_OS_LINUX
++    // Some platform themes (e.g. the xdg-desktop-portal theme used by Flatpak
++    // with the KDE runtime on non-KDE desktops) report the desktop color scheme
++    // but provide a palette that comes from GTK and does not follow it, so the
++    // UI stays in light mode even on a dark desktop. When the app follows the
++    // reported color scheme but the palette does not match it, apply the style
++    // palette, which does follow the color scheme.
++    const Qt::ColorScheme EffectiveColorTheme=qApp->styleHints()->colorScheme();
++    if(EffectiveColorTheme!=Qt::ColorScheme::Unknown
++        && (ColorTheme==Qt::ColorScheme::Unknown || ColorTheme==EffectiveColorTheme)
++        && (qApp->palette().color(QPalette::Window).lightness()<128)!=(EffectiveColorTheme==Qt::ColorScheme::Dark))
++        qApp->setPalette(QApplication::style()->standardPalette());
++#endif
+ #endif
+ 
+     C->Menu_Option_Preferences_Option(__T("LegacyStreamDisplay"), settings->value("legacyStreamDisplay",false).toBool() ? __T("1") : __T("0"));
